@@ -41,6 +41,9 @@ body {
 /* Navbar CSS Start */
 #main_menu {
    background-color: #F8F9FA;
+   position: fixed;
+   width: 100%;
+   z-index: 999999;
 }
 
 .logo {
