@@ -4,9 +4,12 @@
    padding: 0;
    box-sizing: border-box;
 }
-html,body{
+
+html,
+body {
    scroll-behavior: smooth;
 }
+
 body {
    font-family: 'Athiti', sans-serif;
 }
@@ -42,7 +45,7 @@ body {
 #main_menu {
    background-color: #F8F9FA;
    position: sticky;
-   top:0;
+   top: 0;
    left: 0;
    width: 100%;
    z-index: 99999;
@@ -68,6 +71,7 @@ body {
 
 .menu ul li {
    float: left;
+   position: relative;
 }
 
 .menu ul li a {
@@ -81,9 +85,51 @@ body {
    border-radius: 5px;
 }
 
-.menu ul li:hover a {
+.menu ul li:hover>a {
    background-color: #CFA671;
    color: #F8F9FA;
+}
+
+.menu ul li ul {
+   position: absolute;
+   min-width: 160px;
+   top: calc(100% - 26px);
+   left: 0;
+   background-color: #fff;
+   border-radius: 5px;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   -ms-border-radius: 5px;
+   -o-border-radius: 5px;
+   padding: 8px 0;
+   opacity: 0;
+   visibility: hidden;
+   transition: all linear .4s;
+   -webkit-transition: all linear .4s;
+   -moz-transition: all linear .4s;
+   -ms-transition: all linear .4s;
+   -o-transition: all linear .4s;
+   margin-top: 20px;
+   box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.5);
+}
+
+.menu ul li:hover>ul {
+   opacity: 1;
+   visibility: visible;
+   margin-top: 0;
+}
+
+.menu ul li ul li {
+   width: 100%;
+}
+
+.menu ul li ul li a {
+   border-radius: 0;
+   -webkit-border-radius: 0;
+   -moz-border-radius: 0;
+   -ms-border-radius: 0;
+   -o-border-radius: 0;
+   margin: 0;
 }
 
 /* Navbar CSS End */
@@ -668,7 +714,7 @@ body {
       -ms-transform: rotate(-3deg);
       -o-transform: rotate(-3deg);
       transform-origin: top;
-}
+   }
 
    to {
       color: rgba(255, 255, 255, 0.8);
@@ -678,7 +724,75 @@ body {
       -ms-transform: rotate(6deg);
       -o-transform: rotate(6deg);
       transform-origin: top;
-}
+   }
 }
 
 /* Footer Copyright Section End */
+
+/* ============================================================ */
+/* Child Page Css Start */
+/* ============================================================ */
+/* Child Page Banner Start */
+#child_page_banner {
+   background-image: url(../images/all-bg.jpg);
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
+   padding: 155px 0;
+   position: relative;
+   z-index: 1;
+}
+#child_page_banner::before{
+   position: absolute;
+   content: '';
+   top:0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background-color: rgba(0, 0, 0, .8);
+   z-index: -1;
+}
+.page_breadcrumb h1 {
+   font-size: 38px;
+   color: #ffffff;
+   text-align: center;
+}
+
+/* Child Page Banner End */
+
+/* Reservation Section Start */
+#reservation{
+   padding: 70px 0;
+}
+.booking_form{
+   margin-top:50px;
+}
+.booking_form .row{
+   justify-content: space-between;
+}
+.booking_form_title h2{
+   margin-bottom: 20px;
+}
+.form_group,
+.booking_form_title h2{
+   width: calc(50% - 30px);
+}
+.form_group .form_control{
+   width: 100%;
+   border:1px solid #ced4da;
+   background-color: #fff;
+   color: #343a40;
+   font-size: 16px;
+   padding: 15px 10px;
+   margin-bottom: 15px;
+   appearance: none;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+}
+.form_group input[type="date"].form_control{
+   font-family: 'Athiti', sans-serif;
+}
+.form_group .form_control:focus{
+   border-color: #CFA671;
+}
+/* Reservation Section End */
