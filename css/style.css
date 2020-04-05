@@ -14,7 +14,7 @@ body {
    font-family: 'Athiti', sans-serif;
 }
 
-input:focus{
+input:focus {
    outline: 0;
 }
 
@@ -89,7 +89,8 @@ input:focus{
    border-radius: 5px;
 }
 
-.menu ul li:hover>a {
+.menu ul li:hover>a,
+.menu ul li a.active {
    background-color: #CFA671;
    color: #F8F9FA;
 }
@@ -736,7 +737,7 @@ input:focus{
 /* ============================================================ */
 /* Child Page Css Start */
 /* ============================================================ */
-/* Child Page Banner Start */
+/* Child Page Banner Css Start */
 #child_page_banner {
    background-image: url(../images/all-bg.jpg);
    background-size: cover;
@@ -746,44 +747,56 @@ input:focus{
    position: relative;
    z-index: 1;
 }
-#child_page_banner::before{
+
+#child_page_banner::before {
    position: absolute;
    content: '';
-   top:0;
+   top: 0;
    right: 0;
    bottom: 0;
    left: 0;
    background-color: rgba(0, 0, 0, .8);
    z-index: -1;
 }
+
 .page_breadcrumb h1 {
    font-size: 38px;
    color: #ffffff;
    text-align: center;
 }
 
-/* Child Page Banner End */
+/* Child Page Banner Css End */
 
-/* Reservation Section Start */
-#reservation{
+/* Reservation Section Css Start */
+#reservation {
    padding: 70px 0;
 }
-.booking_form{
-   margin-top:50px;
+
+.booking_form {
+   margin-top: 50px;
 }
-.booking_form .row{
+
+.booking_form .row {
    justify-content: space-between;
 }
-.booking_form_title h2{
+
+.booking_form_title h2 {
    margin-bottom: 20px;
 }
+
 .form_group,
-.booking_form_title h2{
+.booking_form_title h2 {
    width: calc(50% - 30px);
 }
-.form_group .form_control{
+
+.form_group.reservation_submit_btn {
+   text-align: center;
    width: 100%;
-   border:1px solid #ced4da;
+}
+
+.form_group .form_control {
+   width: 100%;
+   border: 1px solid #ced4da;
    background-color: #fff;
    color: #343a40;
    font-size: 16px;
@@ -793,11 +806,348 @@ input:focus{
    -webkit-appearance: none;
    -moz-appearance: none;
 }
-.form_group input[type="date"].form_control{
+
+.form_group input[type="date"].form_control {
    font-family: 'Athiti', sans-serif;
 }
-.form_group .form_control:focus{
+
+.form_group button {
+   font-size: 20px;
+   color: #cfa671;
+   background-color: #fff;
+   border: 2px solid #cfa671;
+   padding: 12px 25px;
+   text-transform: uppercase;
+   margin-top: 10px;
+   border-radius: 5px;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   -ms-border-radius: 5px;
+   -o-border-radius: 5px;
+   transition: all linear .3s;
+   -webkit-transition: all linear .3s;
+   -moz-transition: all linear .3s;
+   -ms-transition: all linear .3s;
+   -o-transition: all linear .3s;
+   cursor: pointer;
+}
+
+.form_group button:hover {
+   background-color: #cfa671;
+   color: #fff;
+}
+
+.form_group .form_control:focus {
    outline: 0;
    border-color: #CFA671;
 }
-/* Reservation Section End */
+
+/* Reservation Section Css End */
+
+/* Stuff Section Css End */
+#stuff {
+   padding: 70px 0;
+}
+
+.stuff_item_container .row {
+   justify-content: space-between;
+}
+
+.single_stuff {
+   width: calc(100% / 3 - 30px);
+   position: relative;
+   padding: 10px;
+   margin-top: 50px;
+}
+
+.single_stuff:after,
+.single_stuff::before {
+   content: '';
+   position: absolute;
+   background-color: #cfa671;
+   transition: all linear .2s;
+   -webkit-transition: all linear .2s;
+   -moz-transition: all linear .2s;
+   -ms-transition: all linear .2s;
+   -o-transition: all linear .2s;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   -webkit-transform: translate(-50%, -50%);
+   -moz-transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+   -o-transform: translate(-50%, -50%);
+   z-index: -1;
+}
+
+.single_stuff:after {
+   width: 100%;
+   height: 32%;
+}
+
+.single_stuff:hover:after {
+   width: 100%;
+   height: 75%;
+}
+
+.single_stuff::before {
+   height: 100%;
+   width: 35%;
+}
+
+.single_stuff:hover::before {
+   height: 100%;
+   width: 70%;
+}
+
+.single_stuff img {
+   width: 100%;
+   display: block;
+   border: 2px solid #d0a772;
+   border-top-left-radius: 20px;
+}
+
+.stuff_info_overly {
+   position: absolute;
+   color: #fff;
+   right: 22px;
+   left: 22px;
+   bottom: 60px;
+   background-color: #d0a772;
+   text-align: center;
+   padding: 25px 10px 20px;
+   transition: all ease-in-out .2s;
+   -webkit-transition: all ease-in-out .2s;
+   -moz-transition: all ease-in-out .2s;
+   -ms-transition: all ease-in-out .2s;
+   -o-transition: all ease-in-out .2s;
+   border-radius: 10px 0 10px 0;
+   -webkit-border-radius: 10px 0 10px 0;
+   -moz-border-radius: 10px 0 10px 0;
+   -ms-border-radius: 10px 0 10px 0;
+   -o-border-radius: 10px 0 10px 0;
+   opacity: 0;
+   visibility: hidden;
+}
+
+.single_stuff:hover .stuff_info_overly {
+   bottom: 20px;
+   opacity: 1;
+   visibility: visible;
+}
+
+.stuff_info_overly h3 {
+   font-size: 25px;
+   font-weight: 600;
+   letter-spacing: 1px;
+   text-transform: capitalize;
+   margin-bottom: 10px;
+}
+
+.stuff_info_overly h3 small {
+   display: block;
+   font-size: 16px;
+   text-transform: uppercase;
+   margin-bottom: 10px;
+}
+
+.stuff_info_overly ul {
+   list-style-type: none;
+}
+
+.stuff_info_overly ul li {
+   display: inline-block;
+   margin: 0 5px;
+}
+
+.stuff_info_overly ul li a {
+   display: block;
+   width: 35px;
+   height: 35px;
+   border-radius: 50%;
+   -webkit-border-radius: 50%;
+   -moz-border-radius: 50%;
+   -ms-border-radius: 50%;
+   -o-border-radius: 50%;
+   font-size: 20px;
+   text-align: center;
+   line-height: 35px;
+   color: #cfa671;
+   background-color: #fff;
+}
+
+/* Stuff Section Css End */
+
+/* Blog Section Css Start */
+#blog {
+   padding: 70px 0;
+}
+
+.blog_item_container .row {
+   justify-content: space-between;
+}
+
+.single_blog {
+   width: calc(100% / 3 - 30px);
+   position: relative;
+   margin-top: 50px;
+   background-size: cover !important;
+   background-position: center !important;
+   border: 1px solid #ddd;
+   padding: 25px;
+   border-radius: 5px;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   -ms-border-radius: 5px;
+   -o-border-radius: 5px;
+   overflow: hidden;
+   z-index: 1;
+}
+
+.single_blog::before {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(255, 255, 255, 1);
+   left: 0;
+   top: 0;
+   z-index: -1;
+   transition: linear .4s;
+   -webkit-transition: linear .4s;
+   -moz-transition: linear .4s;
+   -ms-transition: linear .4s;
+   -o-transition: linear .4s;
+}
+
+.single_blog:hover::before {
+   background-color: rgba(255, 255, 255, 0.92);
+}
+
+.single_blog h3 {
+   font-size: 18px;
+   font-weight: 500;
+   color: #222222;
+   margin-bottom: 10px;
+}
+
+.single_blog ul {
+   list-style-type: none;
+   padding: 5px 0;
+}
+
+.single_blog ul li {
+   display: inline-block;
+   padding-right: 10px;
+}
+
+.single_blog ul li p {
+   font-size: 15px;
+   color: #cfa671;
+   text-decoration: none;
+}
+
+.single_blog ul li p a {
+   color: #666;
+   text-decoration: none;
+}
+
+.single_blog ul li p a:hover {
+   color: #cfa671;
+}
+
+.single_blog>p {
+   color: #010101;
+   line-height: 1.8;
+   text-align: justify;
+   margin: 10px 0;
+}
+
+.single_blog>a {
+   display: inline-block;
+   font-size: 18px;
+   color: #cfa671;
+   text-transform: uppercase;
+   padding: 12px 25px;
+   text-decoration: none;
+   border: 2px solid #cfa671;
+   border-radius: 5px;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   -ms-border-radius: 5px;
+   -o-border-radius: 5px;
+   margin-top: 10px;
+}
+
+/* Blog Section Css End */
+
+/* Contact Page Section Css Start */
+#contact_page_section {
+   padding-bottom: 70px;
+}
+#contact_page_section .map iframe{
+   width: 100%;
+   display: block;
+   height: 500px;
+}
+#contact_page_section .section_ttl{
+   margin: 50px 0;
+}
+.contact_form {
+   text-align: center;
+}
+
+.contact_form input,
+.contact_form textarea {
+   width: 100%;
+   border: 1px solid #ced4da;
+   background-color: #fff;
+   color: #343a40;
+   font-size: 16px;
+   padding: 15px 10px;
+   margin-bottom: 20px;
+   border-radius: 5px 0 5px 0;
+   -webkit-border-radius: 5px 0 5px 0;
+   -moz-border-radius: 5px 0 5px 0;
+   -ms-border-radius: 5px 0 5px 0;
+   -o-border-radius: 5px 0 5px 0;
+}
+
+.contact_form textarea {
+   font-family: 'Athiti', sans-serif;
+   resize: none;
+}
+
+.contact_form button {
+   font-size: 20px;
+   color: #cfa671;
+   background-color: #fff;
+   border: 2px solid #cfa671;
+   padding: 12px 25px;
+   text-transform: uppercase;
+   margin-top: 1px;
+   border-radius: 5px;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   -ms-border-radius: 5px;
+   -o-border-radius: 5px;
+   transition: all linear .3s;
+   -webkit-transition: all linear .3s;
+   -moz-transition: all linear .3s;
+   -ms-transition: all linear .3s;
+   -o-transition: all linear .3s;
+   cursor: pointer;
+}
+
+.contact_form button:hover {
+   background-color: #cfa671;
+   color: #fff;
+}
+
+.contact_form input:focus,
+.contact_form textarea:focus {
+   outline: 0;
+   border-color: #CFA671;
+}
+
+/* Contact Page Section Css End */
