@@ -147,6 +147,37 @@
       }
 
       /* Footer Section Responsive Css End */
+
+
+      /* ============================================================ */
+      /* Child Page Responsive Css Start */
+      /* ============================================================ */
+      /* Child Page Banner Responsive Css Start */
+      #child_page_banner {
+         padding: 100px 0;
+      }
+
+      /* Child Page Banner Responsive Css End */
+
+      /* Stuff & Blog Section Responsive Css Start */
+      #stuff, #blog {
+         padding: 40px 0;
+      }
+
+      .single_stuff,.single_blog {
+         width: calc(100% / 2 - 30px);
+      }
+
+      /* Stuff & Blog Section Responsive Css End */
+
+      /* Contact Page Section Responsive Css Start */
+      #contact_page_section {
+         padding-bottom: 40px;
+      }
+      #contact_page_section .map iframe{
+         height: 350px;
+      }
+      /* Contact Page Section Responsive Css End */
    }
 
    /* Css End For Medium Device */
@@ -203,9 +234,11 @@
       .banner_content h1 {
          font-size: 30px;
       }
-      .banner_content p{
+
+      .banner_content p {
          padding: 20px 10px;
       }
+
       /* Banner Section Responsive Css End */
 
       /* About Section Responsive Css Start */
@@ -356,21 +389,63 @@
       }
 
       /* Footer Copyright Section Responsive Css Start */
+
+      /* ============================================================ */
+      /* Child Page Responsive Css Start */
+      /* ============================================================ */
+
+      /* Child Page Banner Responsive Css Start */
+      #child_page_banner {
+         padding: 50px 0;
+      }
+
+      .form_group {
+         width: 100%;
+         padding: 0 15px;
+      }
+
+      /* Child Page Banner Responsive Css End */
+
+      /* Stuff & Blog Section Responsive Css Start */
+      #stuff,#blog {
+         padding: 40px 0;
+      }
+
+      .blog_item_container{
+         padding: 0 10px;
+      }
+
+      .single_stuff,.single_blog {
+         width: 100%;
+      margin-top: 30px;
+      }
+
+      /* Stuff & Blog Section Responsive Css End */
+            /* Contact Page Section Responsive Css Start */
+            #contact_page_section {
+               padding-bottom: 30px;
+            }
+            #contact_page_section .map iframe{
+               height: 250px;
+            }
+            .contact_form{
+               padding: 0 15px;
+            }
+            /* Contact Page Section Responsive Css End */
+      /* Css End For Extra Small Device */
    }
 
-   /* Css End For Extra Small Device */
 
+   /* Css Start For Small Device */
+   @media (min-width: 576px) and (max-width: 767.98px) {
 
-      /* Css Start For Small Device */
-      @media (min-width: 576px) and (max-width: 767.98px) {
+      /* Common Responsive Css Start */
+      .container {
+         width: 540px;
+      }
 
-         /* Common Responsive Css Start */
-         .container {
-            width: 540px;
-         }
-
-         /* Common Responsive Css End */
-               /* Gallery Section Responsive Css Start */
+      /* Common Responsive Css End */
+      /* Gallery Section Responsive Css Start */
 
       .gallery_item {
          width: 80%;
@@ -378,6 +453,6 @@
       }
 
       /* Gallery Section Responsive Css End */
-      }
+   }
 
-      /* Css End For Small Device */
+   /* Css End For Small Device */

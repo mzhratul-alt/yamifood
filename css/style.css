@@ -812,13 +812,11 @@ input:focus {
    justify-content: space-between;
 }
 
-.booking_form_title h2 {
+.booking_form h2 {
    margin-bottom: 20px;
 }
-
-.form_group,
-.booking_form_title h2 {
-   width: calc(50% - 30px);
+.form_group{
+   width: calc(50% - 15px);
 }
 
 .form_group.reservation_submit_btn {
