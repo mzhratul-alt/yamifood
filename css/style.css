@@ -62,6 +62,7 @@ input:focus {
 .logo img {
    padding: 18px 0;
    display: block;
+   width: 100%;
 }
 
 .menu {
@@ -136,10 +137,20 @@ input:focus {
    -o-border-radius: 0;
    margin: 0;
 }
-
+.menu ul li.mbl_menu{
+   display: none;
+}
+.menu ul li.mbl_menu ul{
+   right: 0;
+   left: auto;
+}
+.menu ul li.mbl_menu ul li ul{
+   right: 100%;
+   top: 0;
+}
 /* Navbar CSS End */
 
-/* Banner Section Start */
+/* Banner Section Css Start */
 #banner {
    height: 635px;
    background-image: url(../images/slider-01.jpg);
@@ -197,9 +208,9 @@ input:focus {
    background-color: #CFA671;
 }
 
-/* Banner Section End */
+/* Banner Section Css End */
 
-/* About Section Start */
+/* About Section Css Start */
 #about {
    margin-top: 80px;
 }
@@ -221,13 +232,22 @@ input:focus {
 
 /* About Section End */
 /*welcome body start*/
+.about_content h1 {
+   font-size: 35px;
+}
+
 .about_content h1 span {
    color: #d0a772;
 }
-
-.about_content h1 {
-   font-size: 35px;
-
+.about_content > span {
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 5px;
+	display: inline-block;
+}
+.about_content p{
+   text-align: justify;
+   margin: 10px 0;
 }
 
 .about_content button {
@@ -262,6 +282,18 @@ input:focus {
    background-attachment: fixed;
    padding: 100px 0;
    margin-top: 70px;
+   position: relative;
+   z-index: 1;
+}
+#quote::before{
+   content: '';
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background-color: rgba(0, 0, 0, .8);
+   z-index: -1;
 }
 
 .quote_box {
@@ -336,12 +368,12 @@ input:focus {
 }
 
 .menu_item_container .row {
-   justify-content: center;
+   justify-content: space-between;
 }
 
 .menu_item {
-   width: calc(33.33% - 30px);
-   margin: 30px 15px;
+   width: calc((100% - 60px) / 3);
+   margin: 30px 0;
    position: relative;
    box-shadow: 0 0 10px #ccc;
    overflow: hidden;
